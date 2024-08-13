@@ -1,0 +1,7 @@
+Detalle del producto:<br>
+    @if (product$ | async; as producto){
+      <strong>Título:</strong> {{producto.title}}<br>
+      <strong>Descripción:</strong> {{producto.description}}
+    } @else {
+      No se encuentra el Producto
+    }

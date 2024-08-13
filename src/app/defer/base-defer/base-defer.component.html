@@ -1,0 +1,25 @@
+<p>Uso del Defer</p>
+
+@defer (on timer(2000)) {
+  <app-hijo-a-defer></app-hijo-a-defer>
+} @placeholder {
+  <span class="placeholder">Contenido por defecto del componente.</span>
+} @loading {
+  <!-- // aquí podemos poner un spinner por ejemplo -->
+  <span class="loading">Cargando.</span>
+} @error {
+  <span class="error">Error al cargar el componente.</span>
+}
+
+@defer (on timer(6000)) {
+<app-hijo-b-defer></app-hijo-b-defer>
+} @placeholder {
+  <span class="placeholder"><br>Contenido por defecto del componente.</span>
+}
+
+<br><br><button (click)="showComponenteC()">Muestra el componente C</button>
+@defer ( when isLoaded) {
+  <app-hijo-c-defer></app-hijo-c-defer>
+} @placeholder {
+  <br><h5>El componente C aún no es cargado.</h5>
+}
